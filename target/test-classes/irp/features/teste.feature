@@ -1,5 +1,6 @@
-#Author: Alexandre Freitas
-#language: pt
+# Author: Alexandre Freitas
+# language: pt
+# coding: utf-8
 
 Funcionalidade: Gerar relatórios
   Eu como usuário

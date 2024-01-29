@@ -35,13 +35,13 @@ public class HistoricoDeFaturasPO extends DriverFactory{
     public List<WebElement> listaMoedaDeFaturamento;
     
     @FindBy(xpath = "//*[text() = 'Serviço']")
-    public WebElement textoServiço;
+    public WebElement textoServico;
     
     @FindBy(xpath = "//*[@id='form-revenueHistory']/div/div[3]/div/button/span")
     public WebElement textoNenhumSelecionadoServico;
     
     @FindBy(xpath = "//*[@id='form-revenueHistory']/div/div[3]/div/ul/li")
-    public List<WebElement> listaServiço;
+    public List<WebElement> listaServioo;
     
     @FindBy(xpath = "//*[text() = 'País']")
     public WebElement textoPais;

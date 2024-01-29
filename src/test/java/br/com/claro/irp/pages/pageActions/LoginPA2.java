@@ -19,11 +19,13 @@ import br.com.claro.irp.pages.pageObjects.RelatoriosPO;
 import br.com.claro.irp.utils.acoesWeb;
 import br.com.claro.irp.utils.DriverFactory;
 import br.com.claro.irp.utils.PDF;
+import org.junit.Test;
 
 public class LoginPA2 extends DriverFactory{
 	private RelatoriosPO acaoRelatorios = new RelatoriosPO();
 	private LoginPO acaoLogin = new LoginPO();
 	private acoesWeb acaoWeb = new acoesWeb();
+
 
 	public  void criarArquvioPDF(String string) {
 		try {

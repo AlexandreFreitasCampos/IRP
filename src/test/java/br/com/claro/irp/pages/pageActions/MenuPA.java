@@ -61,27 +61,25 @@ public class MenuPA extends DriverFactory {
 
 	public void clicarBotao(String string) {
 		try {
-			switch (string) {
-			case "Admin":
-				escreveStep("Validar o menu 'Admin'");
-				acaoMenu.menuAdmin.click();
-				screenShot();
-				inserePrint();
-				break;
-			/*
-			 * case "Troca de senha" : acaoMenu.btnTrocaDeSenha.click();
-			 * acaoMenu.btnAceitar.click();
-			 * escreveStep("Validar a tela de troca de 'Senha'"); screenShot();
-			 * inserePrint(); break; case "Registro de Usuários":
-			 * acaoMenu.menuAdmin.click(); acaoMenu.btnRegistroDeUsuarios.click();
-			 * acoesWeb.aguardaElementoPresente(acao.textoNenhumSelecionado); break;
-			 */
-			/*
-			 * case "Botão Salvar": elementoPresente = acaoMenu.btnSalvar.isDisplayed(); if
-			 * (elementoPresente) { escreveDocumento(string); acao.menuRelatorios.click(); }
-			 * else { escreveErroComponente(string); } break;
-			 */
-			}
+            if (string.equals("Admin")) {
+                escreveStep("Validar o menu 'Admin'");
+                acaoMenu.menuAdmin.click();
+                screenShot();
+                inserePrint();
+                /*
+                 * case "Troca de senha" : acaoMenu.btnTrocaDeSenha.click();
+                 * acaoMenu.btnAceitar.click();
+                 * escreveStep("Validar a tela de troca de 'Senha'"); screenShot();
+                 * inserePrint(); break; case "Registro de Usuários":
+                 * acaoMenu.menuAdmin.click(); acaoMenu.btnRegistroDeUsuarios.click();
+                 * acoesWeb.aguardaElementoPresente(acao.textoNenhumSelecionado); break;
+                 */
+                /*
+                 * case "Botão Salvar": elementoPresente = acaoMenu.btnSalvar.isDisplayed(); if
+                 * (elementoPresente) { escreveDocumento(string); acao.menuRelatorios.click(); }
+                 * else { escreveErroComponente(string); } break;
+                 */
+            }
 		} catch (AssertionError e) {
 			escreveErroTexto(string, textorecebido);
 		} catch (Exception e) {
@@ -110,7 +108,7 @@ public class MenuPA extends DriverFactory {
 				}
 				break;
 			case "Histórico de Faturas":
-				elementoPresente = acaoMenu.menuHistóricoDeFaturas.isDisplayed();
+				elementoPresente = acaoMenu.menuHistoricoDeFaturas.isDisplayed();
 				if (elementoPresente) {
 					escreveDocumento("Menu 'Histórico de Faturas'");
 				} else {

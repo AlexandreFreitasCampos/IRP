@@ -23,7 +23,7 @@ public class HistoricoDeFaturasPA extends DriverFactory{
 	br.com.claro.irp.utils.acoesWeb acoesWeb = new acoesWeb();
 	
 	private String textorecebido;
-	private List<String> listaRecebida;
+	private final List<String> listaRecebida = new ArrayList<>();
 
 	public void getTexto(String string) {
 		try {
@@ -43,13 +43,11 @@ public class HistoricoDeFaturasPA extends DriverFactory{
 				textorecebido = acaoHistoricoFaturas.textoPaisDeFaturamento.getText();
 				assertEquals(textorecebido, string);
 				
-				listaRecebida = new ArrayList<String>();
-				
 				for(WebElement pais : acaoHistoricoFaturas.listaPaisDeFaturamento) {
 					listaRecebida.add(pais.getText());
 				}
 				
-				textorecebido = listaRecebida.get(0).toString();
+				textorecebido = listaRecebida.get(0);
 				
 				escreveDocumento(string + ": " + textorecebido.replace("[", "").replace("]", ""));
 				break;				
@@ -57,25 +55,23 @@ public class HistoricoDeFaturasPA extends DriverFactory{
 				textorecebido = acaoHistoricoFaturas.textoMoedaDeFaturamento.getText();
 				assertEquals(textorecebido, string);
 				
-				listaRecebida = new ArrayList<String>();
-				
 				for(WebElement moeda : acaoHistoricoFaturas.listaMoedaDeFaturamento) {
 					listaRecebida.add(moeda.getText());
 				}
 				
-				textorecebido = listaRecebida.get(0).toString();
+				textorecebido = listaRecebida.get(0);
 				
 				escreveDocumento(string + ": " + textorecebido.replace("[", "").replace("]", ""));
 				break;	
 			case "Serviço":
-				if(acaoHistoricoFaturas.textoServiço.getText().equals(string) && !acaoHistoricoFaturas.textoNenhumSelecionadoServico.getText().equals(null)) {
+				if(acaoHistoricoFaturas.textoServico.getText().equals(string) && acaoHistoricoFaturas.textoNenhumSelecionadoServico.getText() != null) {
 					escreveDocumento("Lista de serviços: " + acaoHistoricoFaturas.textoNenhumSelecionadoServico.getText());
 				}else {
 					escreveDocumento("Lista de serviços: " + acaoHistoricoFaturas.textoNenhumSelecionadoServico.getText() + " não encontrado!!!");
 				}
 				break;	
 			case "País":
-				if(acaoHistoricoFaturas.textoPais.getText().equals(string) && !acaoHistoricoFaturas.textoNenhumSelecionadoPais.getText().equals(null)) {
+				if(acaoHistoricoFaturas.textoPais.getText().equals(string) && acaoHistoricoFaturas.textoNenhumSelecionadoPais.getText() != null) {
 					escreveDocumento("Lista de países: " + acaoHistoricoFaturas.textoNenhumSelecionadoPais.getText());
 				}else {
 					escreveDocumento("Lista de países: " + acaoHistoricoFaturas.textoNenhumSelecionadoPais.getText() + " não encontrado!!!");
@@ -95,13 +91,11 @@ public class HistoricoDeFaturasPA extends DriverFactory{
 				textorecebido = acaoHistoricoFaturas.textoTipoDeFiltro.getText();
 				assertEquals(textorecebido, string);
 				
-				listaRecebida = new ArrayList<String>();
-				
 				for(WebElement filtro : acaoHistoricoFaturas.listaTipoDeFiltro) {
 					listaRecebida.add(filtro.getText());
 				}
 				
-				textorecebido = listaRecebida.get(0).toString();
+				textorecebido = listaRecebida.get(0);
 				
 				escreveDocumento(string + ": " + textorecebido.replace("[", "").replace("]", ""));
 				break;	
@@ -109,13 +103,11 @@ public class HistoricoDeFaturasPA extends DriverFactory{
 				textorecebido = acaoHistoricoFaturas.textoStatus.getText();
 				assertEquals(textorecebido, string);
 				
-				listaRecebida = new ArrayList<String>();
-				
 				for(WebElement status : acaoHistoricoFaturas.listaStatus) {
 					listaRecebida.add(status.getText());
 				}
 				
-				textorecebido = listaRecebida.get(0).toString();
+				textorecebido = listaRecebida.get(0);
 				
 				escreveDocumento(string + ": " + textorecebido.replace("[", "").replace("]", ""));
 				break;						
@@ -130,13 +122,11 @@ public class HistoricoDeFaturasPA extends DriverFactory{
 
 	public void getComponente(String string) {
 		try {
-			switch (string) {
-			case "Botão Listar":
-				textorecebido = acaoHistoricoFaturas.botaoListar.getText();
-				assertEquals(textorecebido, string.replace("Botão ", ""));
-				escreveDocumento("Botão: " + textorecebido);
-				break;	
-			}	
+            if (string.equals("Botão Listar")) {
+                textorecebido = acaoHistoricoFaturas.botaoListar.getText();
+                assertEquals(textorecebido, string.replace("Botão ", ""));
+                escreveDocumento("Botão: " + textorecebido);
+            }
 		} catch (AssertionError e) {
 			escreveErroTexto(string, textorecebido);
 		} catch (Exception e) {

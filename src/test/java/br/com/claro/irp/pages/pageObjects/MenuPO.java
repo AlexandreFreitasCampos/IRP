@@ -23,7 +23,7 @@ public class MenuPO extends DriverFactory {
     public WebElement menuFaturamento;
     
     @FindBy(xpath = "//*[text()='Histórico de Faturas']")
-    public WebElement menuHistóricoDeFaturas;
+    public WebElement menuHistoricoDeFaturas;
     
     @FindBy(xpath = "//*[text()='Admin']")
     public WebElement menuAdmin;    

@@ -17,8 +17,8 @@ public class FaturamentoPA extends DriverFactory {
 	FaturamentoPO acaoFaturamento = new FaturamentoPO();
 	br.com.claro.irp.utils.acoesWeb acoesWeb = new acoesWeb();
 
-	private String textorecebido;
-	private List<String> listaRecebida;
+	private String textorecebido = acaoFaturamento.textoFiltroDeFaturas.getText();
+	private final List<String> listaRecebida = new ArrayList<>();
 
 	public void getTexto(String string) {
 		try {
@@ -48,13 +48,11 @@ public class FaturamentoPA extends DriverFactory {
 				textorecebido = acaoFaturamento.textoPaisDeFaturamento.getText();
 				assertEquals(textorecebido, string);
 
-				listaRecebida = new ArrayList<String>();
-
 				for (WebElement pais : acaoFaturamento.listaPaisDeFaturamento) {
 					listaRecebida.add(pais.getText());
 				}
 
-				textorecebido = listaRecebida.get(0).toString();
+				textorecebido = listaRecebida.get(0);
 
 				escreveDocumento(string + ": " + textorecebido.replace("[", "").replace("]", ""));
 				break;
@@ -62,19 +60,17 @@ public class FaturamentoPA extends DriverFactory {
 				textorecebido = acaoFaturamento.textoMoedaDeFaturamento.getText();
 				assertEquals(textorecebido, string);
 
-				listaRecebida = new ArrayList<String>();
-
 				for (WebElement moeda : acaoFaturamento.listaMoedaDeFaturamento) {
 					listaRecebida.add(moeda.getText());
 				}
 
-				textorecebido = listaRecebida.get(0).toString();
+				textorecebido = listaRecebida.get(0);
 
 				escreveDocumento(string + ": " + textorecebido.replace("[", "").replace("]", ""));
 				break;
 			case "Serviço":
-				if (acaoFaturamento.textoServiço.getText().equals(string)
-						&& !acaoFaturamento.textoNenhumSelecionadoServico.getText().equals(null)) {
+				if (acaoFaturamento.textoServico.getText().equals(string)
+						&& acaoFaturamento.textoNenhumSelecionadoServico.getText() != null) {
 					escreveDocumento("Lista de serviços: " + acaoFaturamento.textoNenhumSelecionadoServico.getText());
 				} else {
 					escreveDocumento("Lista de serviços: " + acaoFaturamento.textoNenhumSelecionadoServico.getText()
@@ -83,7 +79,7 @@ public class FaturamentoPA extends DriverFactory {
 				break;
 			case "País":
 				if (acaoFaturamento.textoPais.getText().equals(string)
-						&& !acaoFaturamento.textoNenhumSelecionadoPais.getText().equals(null)) {
+						&& acaoFaturamento.textoNenhumSelecionadoPais.getText() != null) {
 					escreveDocumento("Lista de países: " + acaoFaturamento.textoNenhumSelecionadoPais.getText());
 				} else {
 					escreveDocumento("Lista de países: " + acaoFaturamento.textoNenhumSelecionadoPais.getText()
@@ -100,7 +96,9 @@ public class FaturamentoPA extends DriverFactory {
 				assertEquals(textorecebido, string);
 				escreveDocumento("Calendário: " + textorecebido);
 				break;
-			}
+                default:
+                    throw new IllegalStateException("Unexpected value: " + string);
+            }
 		} catch (AssertionError e) {
 			escreveErroTexto(string, textorecebido);
 		} catch (Exception e) {
@@ -111,13 +109,11 @@ public class FaturamentoPA extends DriverFactory {
 
 	public void getComponente(String string) {
 		try {
-			switch (string) {
-			case "Botão Listar":
-				textorecebido = acaoFaturamento.botaoListar.getText();
-				assertEquals(textorecebido, string.replace("Botão ", ""));
-				escreveDocumento("Botão: " + textorecebido);
-				break;
-			}
+            if (string.equals("Botão Listar")) {
+                textorecebido = acaoFaturamento.botaoListar.getText();
+                assertEquals(textorecebido, string.replace("Botão ", ""));
+                escreveDocumento("Botão: " + textorecebido);
+            }
 		} catch (AssertionError e) {
 			escreveErroTexto(string, textorecebido);
 		} catch (Exception e) {
