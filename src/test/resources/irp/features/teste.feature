@@ -1,5 +1,5 @@
 # Author: Alexandre Freitas
-# language: pt0/
+# language: pt
 # coding: utf-8
 
 Funcionalidade: Gerar relatórios
