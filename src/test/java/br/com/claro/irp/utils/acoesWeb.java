@@ -30,11 +30,10 @@ public class acoesWeb extends DriverFactory {
 	}
 
 	public void aguardaElementoPresente(WebElement elemento) {
-		new WebDriverWait(getDriver(), Duration.of(30, ChronoUnit.SECONDS))
-				.until(ExpectedConditions.visibilityOfAllElements((elemento)));
+		new WebDriverWait(getDriver(), 10).until(ExpectedConditions.visibilityOfAllElements((elemento)));
 	}
 	public List<WebElement> aguardaListaPresente(List<WebElement> elemento) {
-		return new WebDriverWait(getDriver(), Duration.of(10, ChronoUnit.SECONDS))
+		return new WebDriverWait(getDriver(), 10)
 				.until(ExpectedConditions.visibilityOfAllElements(elemento));
 
 	}

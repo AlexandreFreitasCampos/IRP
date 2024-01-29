@@ -78,6 +78,6 @@ public class LoginPO extends DriverFactory{
     public WebElement textoNaoPossuiAcesso;
 
     public void aguardaElementoPresente(WebElement elemento,  String string){
-    new WebDriverWait(getDriver(),  Duration.of(15,  ChronoUnit.SECONDS)).until(ExpectedConditions.textToBePresentInElement(elemento,  string));
+    new WebDriverWait(getDriver(),  10).until(ExpectedConditions.textToBePresentInElement(elemento,  string));
     }
 }
