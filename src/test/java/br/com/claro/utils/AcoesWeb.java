@@ -36,15 +36,15 @@ public class AcoesWeb extends DriverFactory {
     }
 
     public static void aguardaElementoPresente(WebElement elemento) {
-        new WebDriverWait(getDriver(), Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(elemento));
+        new WebDriverWait(getDriver(), 30).until(ExpectedConditions.visibilityOf(elemento));
     }
 
     public static void aguardaElementoClicavel(WebElement elemento) {
-        new WebDriverWait(getDriver(), Duration.ofSeconds(30)).until(ExpectedConditions.elementToBeClickable(elemento));
+        new WebDriverWait(getDriver(), 30).until(ExpectedConditions.elementToBeClickable(elemento));
     }
 
     public static void aguardaElementoVisivel() {
-        new WebDriverWait(getDriver(), Duration.ofSeconds(30)).until(ExpectedConditions
+        new WebDriverWait(getDriver(), 30).until(ExpectedConditions
                 .visibilityOfElementLocated(By.xpath("//*[@id='filter']/div/div/div/button")));
     }
 

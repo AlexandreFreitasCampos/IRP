@@ -61,7 +61,6 @@ public class DriverFactory {
 	protected static void createDriver() throws MalformedURLException {
 		// Configurar o WebDriverManager para gerenciarAutomaticamente o ChromeDriver
         WebDriverManager.chromedriver().clearDriverCache().setup();
-        
         // Inicializar o ChromeDriver
         driver =  new ChromeDriver();
         //driver =  new FirefoxDriver();

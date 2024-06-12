@@ -45,7 +45,7 @@ Funcionalidade: Gerar relatórios
 #    Entao clico no botao "Seguinte Colunas"
 #    Quando valido os dados inseridos
 #    E clico no botao "Gerar"
-#    Entao clico no botao "OK"
+#    Entao clico no botaolea "OK"
     Entao salvo o PDF
 
     Exemplos:
