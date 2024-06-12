@@ -14,7 +14,7 @@ pipeline {
         stage('Test') {
             steps {
                 // Comando para executar testes Cucumber, ajustando conforme necessário
-                bat 'mvn clean test -Dtest=Runner'
+                bat 'mvn clean package install test -Dtest=Runner'
             }
         }
         post {
