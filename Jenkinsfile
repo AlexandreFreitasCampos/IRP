@@ -17,15 +17,5 @@ pipeline {
                 bat 'mvn clean package install test -Dtest=Runner'
             }
         }
-        post {
-            success {
-                // Se todas as etapas forem bem-sucedidas
-                echo 'Build succeeded!'
-            }
-            failure {
-                // Se alguma etapa falhar
-                echo 'Build failed!'
-            }
-        }
     }
 }
