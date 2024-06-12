@@ -1,21 +1,30 @@
 pipeline {
     agent any
+
+    tools {
+        maven 'Maven 3.9.6'
+    }
+
     stages {
         stage('Checkout') {
             steps {
-                checkout scm
+                git 'https://github.com/AlexandreFreitasCampos/IRP.git'
             }
         }
         stage('Test') {
             steps {
                 // Comando para executar testes Cucumber, ajustando conforme necessário
-                sh 'mvn test -Dcucumber.options="--plugin pretty --plugin junit:target/cucumber.xml src/test/resources"'
+                bat 'mvn clean test -Dtest=Runner'
             }
         }
-        stage('Publish Reports') {
-            steps {
-                // Publicar relatórios de teste para Jenkins
-                junit 'target/*.xml'
+        post {
+            success {
+                // Se todas as etapas forem bem-sucedidas
+                echo 'Build succeeded!'
+            }
+            failure {
+                // Se alguma etapa falhar
+                echo 'Build failed!'
             }
         }
     }
