@@ -45,6 +45,25 @@ public class DriverFactory {
 		File logo =  new File("C:\\Automacao\\Logo");
 		File Massa =  new File("C:\\Automacao\\Massa de dados");
 
+		// Se não existir,  cria o diretório
+		if (!evidencias.exists()) {
+			evidencias.mkdirs();
+		}
+
+		// Se não existir,  cria o diretório
+		if (!img.exists()) {
+			img.mkdirs();
+		}
+
+		// Se não existir,  cria o diretório
+		if (!logo.exists()) {
+			logo.mkdirs();
+		}
+
+		// Se não existir,  cria o diretório
+		if (!Massa.exists()) {
+			Massa.mkdirs();
+		}
 
 		// Cria uma instância da classe File
 		File logoOrigemImusica =  new File((System.getProperty("user.dir")) + "/src/img/LogoImusica.png");
@@ -56,6 +75,7 @@ public class DriverFactory {
 		FileUtils.copyFileToDirectory(logoOrigemImusica,  logoDestino);
 		FileUtils.copyFileToDirectory(logoOrigemClaro,  logoDestino);
 	}
+
 
 	// Método para criar o driver
 	protected static void createDriver() throws MalformedURLException {
@@ -81,15 +101,15 @@ public class DriverFactory {
 			// Limpa o driver
 			driver =  null;
 			// Mate o processo chromedriver em segundo plano (se necessário)
-			try {
-				// Comando para matar o processo chromedriver
-				Process process = Runtime.getRuntime().exec("pkill chromedriver");
-
-				// Aguarde o processo terminar
-				process.waitFor();
-			} catch (IOException | InterruptedException e) {
-				e.printStackTrace();
-			}
+//			try {
+//				// Comando para matar o processo chromedriver
+//				Process process = Runtime.getRuntime().exec("pkill chromedriver");
+//
+//				// Aguarde o processo terminar
+//				process.waitFor();
+//			} catch (IOException | InterruptedException e) {
+//				e.printStackTrace();
+//			}
 		}
 	}
 

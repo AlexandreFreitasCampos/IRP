@@ -1,7 +1,6 @@
 package br.com.claro.runner;
 
 import br.com.claro.utils.DriverFactory;
-import br.com.claro.utils.PDF;
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import io.cucumber.junit.CucumberOptions.SnippetType;
@@ -24,7 +23,6 @@ import org.junit.runner.RunWith;
 public class Runner {
 	@AfterClass
 	public static void fecharBrowser() {
-		PDF.salvaDocumento();
-		//DriverFactory.killDriver();
+		DriverFactory.killDriver();
 	}
 }

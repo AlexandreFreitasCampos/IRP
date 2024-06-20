@@ -15,6 +15,7 @@ public class StepsDefinition {
     public StepsDefinition(){
 
     }
+
     LoginPA login = new LoginPA();
     RelatoriosPersonalizadosPA relatoriosPersonalizados = new RelatoriosPersonalizadosPA();
     AcoesWeb acaoWeb = new AcoesWeb();
@@ -77,6 +78,13 @@ public class StepsDefinition {
             case "Seguinte Pais":
             case "Seguinte Periodo":
             case "Seguinte relatorio":
+            case "Resetar colunas":
+            case "Usar filtro de share":
+            case "Seguinte Colunas":
+            case "Gerar":
+            case "Ok":
+            case "Download":
+            case "Excluir":
                 relatoriosPersonalizados.clicarBotao(string);
                 break;
         }
@@ -114,26 +122,26 @@ public class StepsDefinition {
 
     @Quando("altero a ordem das colunas")
     public void alteroAOrdemDasColunas() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        relatoriosPersonalizados.alterarPosicaoColunas();
     }
 
     @Quando("deleto as colunas")
     public void deletoAsColunas() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        relatoriosPersonalizados.excluirColunas();
     }
 
     @Quando("informo o Share por artista {int}")
-    public void informoOSharePorArtista(Integer int1) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    public void informoOSharePorArtista(Integer share) {
+        relatoriosPersonalizados.informarShareArtista(share);
     }
 
     @Quando("valido os dados inseridos")
     public void validoOsDadosInseridos() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        relatoriosPersonalizados.validarDadosParaFiltro();
+    }
+    @Quando("valido os dados do relatorio de pedido")
+    public void validoOsDadosDoRelatorioDePedido() {
+        relatoriosPersonalizados.validarRelatorioDePedidos();
     }
 
     @Entao("salvo o PDF")

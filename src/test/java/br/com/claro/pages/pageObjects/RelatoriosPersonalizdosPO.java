@@ -65,7 +65,52 @@ public class RelatoriosPersonalizdosPO extends DriverFactory {
     public WebElement btnNenhumSelecionado;
     @FindBy(xpath = "//*[@id='step-report-type-btn-next']")
     public WebElement btnSeguinteRelatorio;
-
-    //@FindBy(xpath = "//div[@id='step-report-type-content']/div")
-   // public WebElement tipoDeRelatorio;
+    @FindBy(xpath = "//*[@id='step-columns-btn-next']")
+    public WebElement btnSeguinteColunas;
+    @FindBy(xpath = "//button[@id='btn-reset-columns']")
+    public WebElement btnResetColunas;
+    @FindBy(xpath = "//label[@for='check-share-filter']")
+    public WebElement btnFiltoShare;
+    @FindBy(xpath = "//input[@id='share-artist']")
+    public WebElement inputShareArtista;
+    @FindBy(xpath = "//div[@id='step-account-content']")
+    public WebElement txtContaSelecionada;
+    @FindBy(xpath = "//div[@id='step-service-content']")
+    public WebElement txtServicoSelecionado;
+    @FindBy(xpath = "//div[@id='step-country-content']")
+    public WebElement txtPaisSelecionado;;
+    @FindBy(xpath = "//div[@id='step-period-content']")
+    public WebElement txtPeriodoSelecionado;
+    @FindBy(xpath = "//div[@id='step-report-type-content']")
+    public WebElement txtTipoDeRelatorioEFiltro;
+    @FindBy(xpath = "//div[@id='step-columns-content']/div/div[1]")
+    public WebElement txtColunas;
+    @FindBy(xpath = "//div[@id='step-columns-content']/div/div[2]")
+    public WebElement txtFiltroshare;
+    @FindBy(xpath = "//button[@id='step-summary-btn-next']")
+    public WebElement btnGerar;
+    @FindBy(xpath = "//button[@class='btn btn btn-default']")
+    public WebElement btnOk;
+    @FindBy(xpath = "//table[@class='table table-bordered table-striped table-responsive-lg mt-2']/tbody/tr/td[1]")
+    public WebElement txtRelatorioDePedidosPeriodo;
+    @FindBy(xpath = "//table[@class='table table-bordered table-striped table-responsive-lg mt-2']/tbody/tr/td[2]")
+    public WebElement txtRelatorioDePedidosTipoDeRelatorio;
+    @FindBy(xpath = "//table[@class='table table-bordered table-striped table-responsive-lg mt-2']/tbody/tr/td[3]")
+    public WebElement txtRelatorioDePedidosCatalogo;
+    @FindBy(xpath = "//table[@class='table table-bordered table-striped table-responsive-lg mt-2']/tbody/tr/td[4]")
+    public WebElement txtRelatorioDePedidosQtdeRoyalties;
+    @FindBy(xpath = "//table[@class='table table-bordered table-striped table-responsive-lg mt-2']/tbody/tr/td[5]")
+    public WebElement txtRelatorioDePedidosDtGeracao;
+    @FindBy(xpath = "//span[@class='c-grid-columns__title']")
+    public List<WebElement> nomeColunas;
+    @FindBy(xpath = "//span[@id='download']")
+    public WebElement btnDownloadRelatorio;
+    @FindBy(xpath = "//span[@id='delete']")
+    public WebElement btnExcluirRelatorio;
+    @FindBy(xpath = "//div[@id='modal-footer']/button[2]")
+    public WebElement btnConfirmaExclusaoRelatorio;
+    @FindBy(xpath = "//button[@class='btn btn btn-default']")
+    public List <WebElement> listaNenhumRegistro;
+    @FindBy(xpath = "//button[@class='btn btn btn-default']")
+    public WebElement btnNenhumRegistro;
 }

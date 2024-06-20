@@ -5,22 +5,19 @@ import com.opencsv.CSVParserBuilder;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
 import com.opencsv.exceptions.CsvValidationException;
-
+import io.cucumber.java.Scenario;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.time.Duration;
-import java.util.concurrent.TimeUnit;
+import java.util.List;
 
 
 public class AcoesWeb extends DriverFactory {
@@ -48,7 +45,13 @@ public class AcoesWeb extends DriverFactory {
                 .visibilityOfElementLocated(By.xpath("//*[@id='filter']/div/div/div/button")));
     }
 
-    public static void clicarElementosListaSelo(int posicao){
+    public static boolean aguardaCarregamentoDaPagina(WebElement elemento) {
+        WebDriverWait wait = new WebDriverWait(getDriver(), 5); // espera de até 10 segundos
+        System.out.println("Dentro do metodo " + wait.until(ExpectedConditions.invisibilityOf(elemento)));
+        return wait.until(ExpectedConditions.invisibilityOf(elemento));
+    }
+
+    public static void clicarElementosLista(int posicao){
         getDriver().findElement(By.xpath("//ul[@class='multiselect-container " +
                 "dropdown-menu show']/li[" + posicao + "]/a/label/input")).click();
     }
@@ -77,7 +80,7 @@ public class AcoesWeb extends DriverFactory {
         getDriver().findElement(By.xpath("//*[text()='Dez']")).click();
     }
 
-    public void atualizaPagina(){
+    public static void atualizaPagina(){
         getDriver().navigate().refresh();
     }
     public void abrirPastaDownload(){
@@ -189,12 +192,12 @@ public class AcoesWeb extends DriverFactory {
     public static void clicarElementoViaJavaScript(WebElement elemento){
         ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", elemento);
     }
-    public boolean aguardaCarregamentoArquivo(){
+    public static boolean aguardarCarregamentoArquivo(){
         boolean existe = getDriver().findElements(By.xpath("//*[@data-icon='retweet']")).size() > 0;
         return existe;
     }
 
-    public void trocarPosicaoDeColunas(String texto1, String texto2){
+    public static void trocarPosicaoDeColunas(String texto1, String texto2){
         WebElement elemento1 = getDriver().findElement(By.xpath("//span[.='" + texto1 + "']"));
         WebElement elemento2 = getDriver().findElement(By.xpath("//span[.='" + texto2 + "']"));
         highlightElement(elemento1);
@@ -205,7 +208,7 @@ public class AcoesWeb extends DriverFactory {
                 .perform();
         highlightElement(elemento2);
         try{
-            Thread.sleep(3000);
+            Thread.sleep(500);
         }catch (InterruptedException e){
             e.printStackTrace();
         }
@@ -216,28 +219,52 @@ public class AcoesWeb extends DriverFactory {
         js.executeScript("arguments[0].setAttribute('style', 'border: 4px solid blue;');", element);
     }
     public static void excluirColunas(){
-         int tamanhoColuna = 15;
-//        int contador = 1;
-//        while(contador <= 15){
-//            getDriver().findElement(By.xpath(
-//                    "//div[@class='c-grid-columns__item'][" + tamanhoColuna + "]/div/button")).click();
-//            tamanhoColuna--;
-//            contador++;
-//        }
-
-        for(int i = 1; i <=15; i++){
+        List<WebElement> totalColunas = getDriver().findElements(By.xpath("//div[@class='c-grid-columns__content']/span"));
+        for(int i = 1; i <=totalColunas.size(); i++){
             getDriver().findElement(By.xpath( "//div[@class='c-grid-columns__item'][1]/div/button")).click();
         }
     }
 
     public static void scrollAteElemento(WebElement elemento){
-        JavascriptExecutor js = (JavascriptExecutor) getDriver();
-        js.executeScript("arguments[0].scrollIntoView(true);", elemento);
+        ((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);", elemento);
     }
 
-    public static void scrollPagina(){
+    public static void rolarPaginaParaCima(){
+        ((JavascriptExecutor) getDriver()).executeScript("window.scrollTo(0, 0);");
+    }
+
+    public static void rolarPaginaParaBaixo(){
         JavascriptExecutor js = (JavascriptExecutor) getDriver();
         js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
+
+    }
+    public static String  validarTextos(String texto1, String texto2){
+        if(texto1.equals(texto2)){
+            return texto2;
+        }else {
+            PDF.escreveErroTexto(texto2, texto1);
+            return null;
+        }
+    }
+    public static boolean verificaElementoExistente(List<WebElement> elemento){
+        if(elemento.size() > 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    public static void terminaExecucao() {
+        try {
+            // Lançar uma RuntimeException para simular um erro
+            throw new RuntimeException ("Erro simulado");
+        } catch (Exception e) {
+            // Captura a exceção e exibe a mensagem
+            System.out.println("Exceção capturada: " + e.getMessage());
+            PDF.escreveErroComponente(e.getMessage());
+            PDF.salvaDocumento();
+            // Aqui, não fechamos o navegador para fins de depuração
+        }
+
 
     }
 

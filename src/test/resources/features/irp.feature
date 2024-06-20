@@ -36,25 +36,29 @@ Funcionalidade: Gerar relatórios
     E clico no botao "Seguinte Periodo"
     E seleciono o tipo de relatorio "<tipo de relatorio>"
     E seleciono o filtro "<filtro>"
-#    E clico no botao "Seguinte relatorio"
-#    E altero a ordem das colunas
-#    E deleto as colunas
-#    E clico no botao "Resetar colunas"
-#    E clico no botao "Usar filtro de share"
-#    E informo o Share por artista 50
-#    Entao clico no botao "Seguinte Colunas"
-#    Quando valido os dados inseridos
-#    E clico no botao "Gerar"
-#    Entao clico no botaolea "OK"
+    E clico no botao "Seguinte relatorio"
+    E altero a ordem das colunas
+    E deleto as colunas
+    E clico no botao "Resetar colunas"
+    E clico no botao "Usar filtro de share"
+    E informo o Share por artista 50
+    Entao clico no botao "Seguinte Colunas"
+    Quando valido os dados inseridos
+    E clico no botao "Gerar"
+    E clico no botao "Ok"
+    Quando valido os dados do relatorio de pedido
+    E clico no botao "Download"
+    E clico no botao "Excluir"
     Entao salvo o PDF
 
     Exemplos:
       | arquivo                            | opcao     | servico      | tipo de relatorio     | filtro          |
-      | rel_person_grav_edit_todo_catalogo | Gravadora | Claro Música | Relatorios Unificados | Todo o Catálogo |
       | rel_person_grav_edit_selos         | Gravadora | RBT          | Relatorios Unificados | Selos           |
-      | rel_person_grav_edit_artistas      | Gravadora | Claro Música | Relatorios Multiplos  | Artistas        |
+      | rel_person_grav_edit_artistas      | Gravadora | Claro Música | Relatorios Unificados | Artistas        |
       | rel_person_grav_edit_albuns        | Gravadora | RBT          | Relatorios Multiplos  | Albuns          |
       | rel_person_grav_edit_faixas        | Gravadora | Claro Música | Relatorios Multiplos  | Faixas          |
+      | rel_person_grav_edit_todo_catalogo | Gravadora | Claro Música | Relatorios Unificados | Todo o Catálogo |
+
 
 
 
