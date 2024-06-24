@@ -15,10 +15,10 @@ public class LoginPA extends DriverFactory {
     private final RelatoriosPersonalizdosPO acaoRelatorios = new RelatoriosPersonalizdosPO();
     private final LoginPO acaoLogin = new LoginPO();
 
-    public void criarArquvioPDF(String string) {
+    public void criarArquvioPDF(String nomeArquivo, String servico) {
         try {
-            if (string.equals("realizarloginIRP")) {
-                criaDocumento(string);
+            if (nomeArquivo.contains("realizarloginIRP")) {
+                criaDocumento(nomeArquivo);
                 insereCaBecalho();
                 escreveTitulo("Realizar login no sistema 'IRP'");
                 escreveSubTitulo("Precondição:\nPossuir uma conta cadastrada");
@@ -97,5 +97,9 @@ public class LoginPA extends DriverFactory {
             escreveErroComponente(e.getMessage());
         }
 
+    }
+
+    public void salvarPDF() {
+        salvaDocumento();
     }
 }

@@ -4,9 +4,13 @@ package br.com.claro.steps;
 import br.com.claro.pages.pageActions.LoginPA;
 import br.com.claro.pages.pageActions.RelatoriosPersonalizadosPA;
 import br.com.claro.utils.AcoesWeb;
+import br.com.claro.utils.Hooks;
+import br.com.claro.utils.ScenarioDetails;
 import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.Entao;
 import io.cucumber.java.pt.Quando;
+
+import java.util.List;
 
 import static br.com.claro.utils.PDF.escreveStep;
 import static br.com.claro.utils.PDF.salvaDocumento;
@@ -20,12 +24,12 @@ public class StepsDefinition {
     RelatoriosPersonalizadosPA relatoriosPersonalizados = new RelatoriosPersonalizadosPA();
     AcoesWeb acaoWeb = new AcoesWeb();
 
-    @Dado("que criei o arquvio PDF {string}")
-    public void queCrieiOArquvioPDF(String string) {
+    @Dado("que criei o arquvio PDF {string} {string} {string}")
+    public void queCrieiOArquvioPDF(String string, String string2, String string3) {
         if (string.equals("realizarloginIRP")) {
-            login.criarArquvioPDF(string);
+            login.criarArquvioPDF(string, string2);
         } else {
-            relatoriosPersonalizados.criarArquvioPDF(string);
+            relatoriosPersonalizados.criarArquvioPDF(string, string2, string3);
         }
 
     }
@@ -85,6 +89,7 @@ public class StepsDefinition {
             case "Ok":
             case "Download":
             case "Excluir":
+            case "Voltar":
                 relatoriosPersonalizados.clicarBotao(string);
                 break;
         }
@@ -144,8 +149,12 @@ public class StepsDefinition {
         relatoriosPersonalizados.validarRelatorioDePedidos();
     }
 
-    @Entao("salvo o PDF")
-    public void salvoOPDF() {
-        salvaDocumento();
+    @Entao("salvo o PDF {string}")
+    public void salvoOPDF(String string) {
+        if(string.equals("Login")){
+            login.salvarPDF();
+        }else {
+            relatoriosPersonalizados.salvarPDF();
+        }
     }
 }

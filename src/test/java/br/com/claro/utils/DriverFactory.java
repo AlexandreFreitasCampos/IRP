@@ -100,16 +100,6 @@ public class DriverFactory {
 			driver.quit();
 			// Limpa o driver
 			driver =  null;
-			// Mate o processo chromedriver em segundo plano (se necessário)
-//			try {
-//				// Comando para matar o processo chromedriver
-//				Process process = Runtime.getRuntime().exec("pkill chromedriver");
-//
-//				// Aguarde o processo terminar
-//				process.waitFor();
-//			} catch (IOException | InterruptedException e) {
-//				e.printStackTrace();
-//			}
 		}
 	}
 

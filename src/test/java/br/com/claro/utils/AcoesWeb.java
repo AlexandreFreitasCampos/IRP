@@ -22,6 +22,12 @@ import java.util.List;
 
 public class AcoesWeb extends DriverFactory {
     private String nomeArquivo;
+    private static boolean condicao;
+
+    public static void clicarBotaoVoltarNavegador() {
+        getDriver().navigate().back();
+    }
+
     public void getURL(String string) {
         String textorecebido = getDriver().getCurrentUrl();
         try {
@@ -253,19 +259,22 @@ public class AcoesWeb extends DriverFactory {
             return false;
         }
     }
-    public static void terminaExecucao() {
-        try {
-            // Lançar uma RuntimeException para simular um erro
-            throw new RuntimeException ("Erro simulado");
-        } catch (Exception e) {
-            // Captura a exceção e exibe a mensagem
-            System.out.println("Exceção capturada: " + e.getMessage());
-            PDF.escreveErroComponente(e.getMessage());
-            PDF.salvaDocumento();
-            // Aqui, não fechamos o navegador para fins de depuração
-        }
-
-
+    public static void setCondicao(boolean condicao){
+        AcoesWeb.condicao = condicao;
+    }
+    public static boolean finalizarCenario(){
+        return condicao;
     }
 
+    public static void verificaErrosNaExecucao(Exception exception){
+        String ANSI_RED = "\u001B[31m";
+        String ANSI_RESET = "\u001B[0m";
+        List<ScenarioDetails> scenarios = Hooks.getScenarioDetailsList();
+
+        for (ScenarioDetails details : scenarios) {
+            System.out.println("\u001B[31m" + details + "\u001B[0m");
+            PDF.escreveErroComponente(String.valueOf(details));
+        }
+        throw new CustomTestException("Ocorreu um erro durante a execução dos testes", exception);
+    }
 }

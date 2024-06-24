@@ -23,6 +23,8 @@ public class RelatoriosPersonalizdosPO extends DriverFactory {
     public WebElement labelContaGravadora;
     @FindBy(xpath = "//*[text() = 'Warner (Gravadora)']")
     public WebElement contaWarner;
+    @FindBy(xpath = "//td[text() = 'MK Music (Editora)']")
+    public WebElement contaMKMusic;
     @FindBy(xpath = "//select[@id='customReports_recordersSelection']")
     public WebElement selectContas;
     @FindBy(xpath = "//*[@id='step-account-btn-next']")
@@ -31,6 +33,14 @@ public class RelatoriosPersonalizdosPO extends DriverFactory {
     public WebElement servicoClaroMusica;
     @FindBy(xpath = "//label[@for='inlineRBT']")
     public WebElement servicoRBT;
+    @FindBy(xpath = "//label[@for='inlineOTT']")
+    public WebElement servicoOTT;
+    @FindBy(xpath = "//p[text() = 'Seleção de OTT']")
+    public WebElement selecaoOTT;
+    @FindBy(xpath = "//button[@title='Nenhum selecionado']")
+    public WebElement btnOTTNenhumSelecionado;
+    @FindBy(xpath = "//label[@class='checkbox']/input")
+    public WebElement todosOTT;
     @FindBy(xpath = "//*[@id='step-service-btn-next']")
     public WebElement btnSeguinteServico;
     @FindBy(xpath = "//select[@id='customReports_countrySelection']")
@@ -111,6 +121,6 @@ public class RelatoriosPersonalizdosPO extends DriverFactory {
     public WebElement btnConfirmaExclusaoRelatorio;
     @FindBy(xpath = "//button[@class='btn btn btn-default']")
     public List <WebElement> listaNenhumRegistro;
-    @FindBy(xpath = "//button[@class='btn btn btn-default']")
+    @FindBy(xpath = "//button[text()='Ok']")
     public WebElement btnNenhumRegistro;
 }
