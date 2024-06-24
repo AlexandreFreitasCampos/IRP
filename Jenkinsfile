@@ -2,15 +2,34 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout') {
+        stage('Checar URL') {
             steps {
                 git 'https://github.com/AlexandreFreitasCampos/IRP.git'
             }
         }
-        stage('Test') {
+        stage('Efetuar login com perfil Gravadora/Editora') {
             steps {
-                // Comando para executar testes Cucumber, ajustando conforme necessário
-                bat 'mvn clean package install test -Dtest=Runner'
+                bat 'mvn clean test -Dcucumber.filter.name="Efetuar login com perfil Editora"'
+            }
+        }
+        stage('Gerar rel person rec edit selos') {
+            steps {
+                bat 'mvn clean test -Dcucumber.filter.name="rel_person_editor_selos"'
+            }
+        }
+        stage('Gerar rel person rec edit artistas') {
+            steps {
+                bat 'mvn clean test -Dcucumber.filter.name="rel_person_editor_artistas"'
+            }
+        }
+        stage('Gerar rel person rec edit albuns') {
+            steps {
+                bat 'mvn clean test -Dcucumber.filter.name="rel_person_editor_albuns"'
+            }
+        }
+        stage('Gerar rel person rec edit faixas') {
+            steps {
+                bat 'mvn clean test -Dcucumber.filter.name="rel_person_editor_faixas"'
             }
         }
     }
