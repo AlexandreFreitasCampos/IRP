@@ -6,11 +6,9 @@ import br.com.claro.pages.pageActions.RelatoriosPersonalizadosPA;
 import br.com.claro.utils.AcoesWeb;
 import br.com.claro.utils.Hooks;
 import br.com.claro.utils.ScenarioDetails;
-import br.com.claro.utils.WebDriverSingleton;
 import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.Entao;
 import io.cucumber.java.pt.Quando;
-import org.openqa.selenium.WebDriver;
 
 import java.util.List;
 
@@ -25,7 +23,7 @@ public class StepsDefinition {
     LoginPA login = new LoginPA();
     RelatoriosPersonalizadosPA relatoriosPersonalizados = new RelatoriosPersonalizadosPA();
     AcoesWeb acaoWeb = new AcoesWeb();
-    WebDriver driver = WebDriverSingleton.getDriver();
+
     @Dado("que criei o arquvio PDF {string} {string} {string}")
     public void queCrieiOArquvioPDF(String string, String string2, String string3) {
         if (string.equals("realizarloginIRP")) {
