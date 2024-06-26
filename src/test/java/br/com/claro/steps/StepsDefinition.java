@@ -4,15 +4,13 @@ package br.com.claro.steps;
 import br.com.claro.pages.pageActions.LoginPA;
 import br.com.claro.pages.pageActions.RelatoriosPersonalizadosPA;
 import br.com.claro.utils.AcoesWeb;
-import br.com.claro.utils.DriverFactory;
 import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.Entao;
 import io.cucumber.java.pt.Quando;
-import org.openqa.selenium.WebDriver;
 
 import static br.com.claro.utils.PDF.escreveStep;
 
-public class StepsDefinition extends DriverFactory {
+public class StepsDefinition {
     public StepsDefinition() {
 
     }

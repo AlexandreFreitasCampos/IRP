@@ -1,12 +1,11 @@
 package br.com.claro.pages.pageObjects;
 
-import br.com.claro.steps.StepsDefinition;
 import br.com.claro.utils.DriverFactory;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPO extends StepsDefinition {
+public class LoginPO extends DriverFactory {
 
     public LoginPO(){
         PageFactory.initElements(getDriver(),  this);

@@ -1,6 +1,5 @@
 package br.com.claro.pages.pageObjects;
 
-import br.com.claro.steps.StepsDefinition;
 import br.com.claro.utils.DriverFactory;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -8,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class RelatoriosPersonalizdosPO extends StepsDefinition {
+public class RelatoriosPersonalizdosPO extends DriverFactory {
     public RelatoriosPersonalizdosPO(){
         PageFactory.initElements(getDriver(),  this);
     }

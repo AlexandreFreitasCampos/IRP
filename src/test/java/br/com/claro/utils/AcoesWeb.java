@@ -6,7 +6,6 @@ import com.opencsv.CSVParserBuilder;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
 import com.opencsv.exceptions.CsvValidationException;
-import io.cucumber.java.Scenario;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -20,8 +19,10 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.List;
 
+import static br.com.claro.utils.DriverFactory.getDriver;
 
-public class AcoesWeb extends StepsDefinition {
+
+public class AcoesWeb extends DriverFactory {
     private String nomeArquivo;
     private static boolean condicao;
 
