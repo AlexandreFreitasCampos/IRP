@@ -4,15 +4,13 @@ package br.com.claro.pages.pageActions;
 import br.com.claro.pages.pageObjects.LoginPO;
 import br.com.claro.pages.pageObjects.RelatoriosPersonalizdosPO;
 import br.com.claro.utils.AcoesWeb;
-import br.com.claro.utils.DriverFactory2;
-import br.com.claro.utils.WebDriverConfig;
 
 import java.text.DecimalFormat;
 
 import static br.com.claro.utils.PDF.*;
 
 
-public class LoginPA extends WebDriverConfig {
+public class LoginPA{
     private final RelatoriosPersonalizdosPO acaoRelatorios = new RelatoriosPersonalizdosPO();
     private final LoginPO acaoLogin = new LoginPO();
 

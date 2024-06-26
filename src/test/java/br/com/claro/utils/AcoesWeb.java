@@ -20,7 +20,7 @@ import java.io.IOException;
 import java.util.List;
 
 
-public class AcoesWeb extends WebDriverConfig {
+public class AcoesWeb extends DriverFactory {
     private String nomeArquivo;
     private static boolean condicao;
 

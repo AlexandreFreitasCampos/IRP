@@ -10,7 +10,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
 
-public class DriverFactory2 {
+public class DriverFactory {
 
     // CriaA variavel gloBal driver
     protected static WebDriver driver;
