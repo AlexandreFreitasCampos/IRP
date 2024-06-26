@@ -7,34 +7,19 @@ pipeline {
                 git 'https://github.com/AlexandreFreitasCampos/IRP.git'
             }
         }
-        stage('Efetuar login com perfil Recorder and Editor') {
+        stage('Gerar relatorios personalizados todos os filtos com o perfil Editor') {
             steps {
-                bat 'mvn test -Dcucumber.filter.name="Efetuar login com perfil Gravadora/Editora"'
+                bat 'mvn test -Dfeature=src/test/resources/features/editor.feature'
             }
         }
-        stage('Gerar relatorios personalizados Editor and Rec com filtos Faixas') {
+        stage('Gerar relatorios personalizados todos os filtos com o perfil Editor and Recorder') {
             steps {
-                bat 'mvn test -Dcucumber.filter.name="rel_person_rec_edit_faixas"'
+                bat 'mvn test -Dfeature=src/test/resources/features/editorAndRecorder.feature'
             }
         }
-        stage('Efetuar login com perfil Editor') {
+        stage('Gerar relatorios personalizados todos os filtos com o perfil Recorder') {
             steps {
-                bat 'mvn test -Dcucumber.filter.name="Efetuar login com perfil Editora"'
-            }
-        }
-        stage('Gerar relatorios personalizados Editor com filtos Faixas') {
-            steps {
-                bat 'mvn test -Dcucumber.filter.name="rel_person_editor_faixas"'
-            }
-        }
-        stage('Efetuar login com perfil Recorder') {
-            steps {
-                bat 'mvn test -Dcucumber.filter.name="Efetuar login com perfil Gravadora"'
-            }
-        }
-        stage('Gerar relatorios personalizados Recorder com filtos Faixas') {
-            steps {
-                bat 'mvn test -Dcucumber.filter.name="rel_person_recorder_faixas"'
+                bat 'mvn test -Dfeature=src/test/resources/features/recorder.feature'
             }
         }
        

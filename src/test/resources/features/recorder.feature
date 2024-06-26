@@ -52,8 +52,8 @@ Funcionalidade: Gerar relatórios
 
     Exemplos:
       | arquivo                    | opcao     | servico      | tipo de relatorio     | filtro   |
-      | rel_person_editor_selos    | Gravadora | RBT          | Relatorios Unificados | Selos    |
+#      | rel_person_editor_selos    | Gravadora | RBT          | Relatorios Unificados | Selos    |
 #      | rel_person_editor_artistas | Gravadora | RBT          | Relatorios Unificados | Artistas |
 #      | rel_person_editor_albuns   | Gravadora | Claro Música | Relatorios Multiplos  | Albuns   |
-#      | rel_person_editor_faixas   | Gravadora | Claro Música | Relatorios Multiplos  | Faixas   |
+      | rel_person_editor_faixas   | Gravadora | Claro Música | Relatorios Multiplos  | Faixas   |
 ##      | rel_person_editor_todo_catalogo | Gravadora | Claro Música | Relatorios Multiplos  | Todo o Catálogo |
