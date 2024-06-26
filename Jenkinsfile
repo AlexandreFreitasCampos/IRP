@@ -27,9 +27,9 @@ pipeline {
                 bat 'mvn test -Dcucumber.filter.name="rel_person_editor_faixas"'
             }
         }
-        stage('Efetuar login com perfil Editor') {
+        stage('Efetuar login com perfil Recorder') {
             steps {
-                bat 'mvn test -Dcucumber.filter.name="Efetuar login com perfil  Recorder"'
+                bat 'mvn test -Dcucumber.filter.name="Efetuar login com perfil Gravadora"'
             }
         }
         stage('Gerar relatorios personalizados com filtos Faixas') {
