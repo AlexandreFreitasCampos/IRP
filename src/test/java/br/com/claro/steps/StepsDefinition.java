@@ -20,7 +20,7 @@ public class StepsDefinition {
 
     @Dado("que criei o arquvio PDF {string} {string} {string}")
     public void queCrieiOArquvioPDF(String string, String string2, String string3) {
-        if (string.equals("realizarloginIRP")) {
+        if (string.startsWith("realizarloginIRP")) {
             login.criarArquvioPDF(string, string2);
         } else {
             relatoriosPersonalizados.criarArquvioPDF(string, string2, string3);

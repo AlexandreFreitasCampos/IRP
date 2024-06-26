@@ -8,8 +8,8 @@ Funcionalidade: Gerar relatórios
   Para garantir a qualidade dos testes
   E melhorar o tempo de execução
 
-  Cenario: Efetuar login com perfil Editora
-    Dado que criei o arquvio PDF "realizarloginIRP_editor" "" ""
+  Cenario: Efetuar login com perfil Gravadora
+    Dado que criei o arquvio PDF "realizarloginIRP_recorder" "" ""
     Quando valido a URL "https://irp-hmg.imusica.com.br/Account/Login"
     E insiro o usuario "alexandre.campos.editor"
     E insiro a senha "@Gg190504"
@@ -53,7 +53,7 @@ Funcionalidade: Gerar relatórios
     Exemplos:
       | arquivo                    | opcao     | servico      | tipo de relatorio     | filtro   |
       | rel_person_editor_selos    | Gravadora | RBT          | Relatorios Unificados | Selos    |
-      | rel_person_editor_artistas | Gravadora | RBT          | Relatorios Unificados | Artistas |
-      | rel_person_editor_albuns   | Gravadora | Claro Música | Relatorios Multiplos  | Albuns   |
-      | rel_person_editor_faixas   | Gravadora | Claro Música | Relatorios Multiplos  | Faixas   |
+#      | rel_person_editor_artistas | Gravadora | RBT          | Relatorios Unificados | Artistas |
+#      | rel_person_editor_albuns   | Gravadora | Claro Música | Relatorios Multiplos  | Albuns   |
+#      | rel_person_editor_faixas   | Gravadora | Claro Música | Relatorios Multiplos  | Faixas   |
 ##      | rel_person_editor_todo_catalogo | Gravadora | Claro Música | Relatorios Multiplos  | Todo o Catálogo |

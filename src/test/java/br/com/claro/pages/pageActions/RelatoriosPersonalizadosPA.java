@@ -630,7 +630,7 @@ public class RelatoriosPersonalizadosPA {
     public void salvarPDF() {
         salvaDocumento();
         if (filtro.contains("faixas")) {
-           // killDriver();
+           killDriver();
         }
 
     }
