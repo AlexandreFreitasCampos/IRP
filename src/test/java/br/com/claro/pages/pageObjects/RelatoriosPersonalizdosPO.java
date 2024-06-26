@@ -123,4 +123,6 @@ public class RelatoriosPersonalizdosPO extends DriverFactory {
     public List <WebElement> listaNenhumRegistro;
     @FindBy(xpath = "//button[text()='Ok']")
     public WebElement btnNenhumRegistro;
+    @FindBy(xpath = "//button[text() = 'Sair']")
+    public WebElement btnSair;
 }

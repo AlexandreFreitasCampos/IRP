@@ -1,6 +1,7 @@
 package br.com.claro.pages.pageActions;
 
 
+import br.com.claro.pages.pageObjects.LoginPO;
 import br.com.claro.pages.pageObjects.RelatoriosPersonalizdosPO;
 import br.com.claro.utils.AcoesWeb;
 import br.com.claro.utils.DriverFactory;
@@ -17,6 +18,7 @@ import static br.com.claro.utils.PDF.*;
 
 public class RelatoriosPersonalizadosPA {
     RelatoriosPersonalizdosPO relatoriosPersonalizados = new RelatoriosPersonalizdosPO();
+    LoginPO login = new LoginPO();
 
     private static String contaSelecionada;
     private static String servicoSelecionado;
@@ -281,6 +283,12 @@ public class RelatoriosPersonalizadosPA {
                 case "Voltar":
                     AcoesWeb.clicarBotaoVoltarNavegador();
                     AcoesWeb.aguardaElementoPresente(relatoriosPersonalizados.contaMKMusic);
+                    break;
+                case "Sair":
+                    if (filtro.contains("faixas")) {
+                        relatoriosPersonalizados.btnSair.click();
+                        AcoesWeb.aguardaElementoPresente(login.inputSenha);
+                    }
                     break;
             }
         } catch (Exception e) {
@@ -629,9 +637,5 @@ public class RelatoriosPersonalizadosPA {
 
     public void salvarPDF() {
         salvaDocumento();
-        if (filtro.contains("faixas")) {
-           killDriver();
-        }
-
     }
 }

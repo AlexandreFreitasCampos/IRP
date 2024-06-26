@@ -23,6 +23,6 @@ import org.junit.runner.RunWith;
 public class Runner {
 	@AfterClass
 	public static void fecharBrowser() {
-		DriverFactory.killDriver();
+		//DriverFactory.killDriver();
 	}
 }

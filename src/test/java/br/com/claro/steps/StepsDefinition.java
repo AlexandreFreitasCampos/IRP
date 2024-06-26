@@ -84,6 +84,7 @@ public class StepsDefinition {
             case "Download":
             case "Excluir":
             case "Voltar":
+            case "Sair":
                 relatoriosPersonalizados.clicarBotao(string);
                 break;
         }

@@ -9,7 +9,7 @@ Funcionalidade: Gerar relatórios
   E melhorar o tempo de execução
 
   Cenario: Efetuar login com perfil Gravadora/Editora
-    Dado que criei o arquvio PDF "realizarloginIRP_rec_editor" "" ""
+    Dado que criei o arquvio PDF "realizarloginIRP_edit_recor" "" ""
     Quando valido a URL "https://irp-hmg.imusica.com.br/Account/Login"
     E insiro o usuario "alexandre.campos"
     E insiro a senha "@Gg190504"
@@ -49,14 +49,15 @@ Funcionalidade: Gerar relatórios
     Quando valido os dados do relatorio de pedido
     E clico no botao "Download"
     E clico no botao "Excluir"
+    E clico no botao "Sair"
     Entao salvo o PDF "Relatorios"
 
     Exemplos:
       | arquivo                      | opcao     | servico      | tipo de relatorio     | filtro   |
-      | rel_person_rec_edit_selos    | Gravadora | RBT          | Relatorios Unificados | Selos    |
-#      | rel_person_rec_edit_artistas | Gravadora | RBT          | Relatorios Unificados | Artistas |
-#      | rel_person_rec_edit_albuns   | Gravadora | Claro Música | Relatorios Multiplos  | Albuns   |
-#      | rel_person_rec_edit_faixas   | Gravadora | Claro Música | Relatorios Multiplos  | Faixas   |
+#      | rel_person_edit_rec_selos    | Gravadora | RBT          | Relatorios Unificados | Selos    |
+#      | rel_person_edit_rec_artistas | Gravadora | RBT          | Relatorios Unificados | Artistas |
+#      | rel_person_edit_rec_albuns   | Gravadora | Claro Música | Relatorios Multiplos  | Albuns   |
+      | rel_person_edit_rec_faixas   | Gravadora | Claro Música | Relatorios Multiplos  | Faixas   |
 #      | rel_person_grav_edit_todo_catalogo | Gravadora | Claro Música | Relatorios Unificados | Todo o Catálogo |
 
   Cenario: Efetuar login com perfil Editora
@@ -99,14 +100,15 @@ Funcionalidade: Gerar relatórios
     E clico no botao "Download"
     E clico no botao "Excluir"
     E clico no botao "Voltar"
+    E clico no botao "Sair"
     Entao salvo o PDF "Relatorios"
 
     Exemplos:
       | arquivo                    | opcao     | servico      | tipo de relatorio     | filtro   |
-      | rel_person_editor_selos    | Gravadora | RBT          | Relatorios Unificados | Selos    |
+#      | rel_person_editor_selos    | Gravadora | RBT          | Relatorios Unificados | Selos    |
 #      | rel_person_editor_artistas | Gravadora | RBT          | Relatorios Unificados | Artistas |
 #      | rel_person_editor_albuns   | Gravadora | Claro Música | Relatorios Multiplos  | Albuns   |
-#      | rel_person_editor_faixas   | Gravadora | Claro Música | Relatorios Multiplos  | Faixas   |
+      | rel_person_editor_faixas   | Gravadora | Claro Música | Relatorios Multiplos  | Faixas   |
 ##      | rel_person_editor_todo_catalogo | Gravadora | Claro Música | Relatorios Multiplos  | Todo o Catálogo |
 
   Cenario: Efetuar login com perfil Gravadora
@@ -149,12 +151,13 @@ Funcionalidade: Gerar relatórios
     E clico no botao "Download"
     E clico no botao "Excluir"
     E clico no botao "Voltar"
+    E clico no botao "Sair"
     Entao salvo o PDF "Relatorios"
 
     Exemplos:
-      | arquivo                    | opcao     | servico      | tipo de relatorio     | filtro   |
-      | rel_person_editor_selos    | Gravadora | RBT          | Relatorios Unificados | Selos    |
-#      | rel_person_editor_artistas | Gravadora | RBT          | Relatorios Unificados | Artistas |
-#      | rel_person_editor_albuns   | Gravadora | Claro Música | Relatorios Multiplos  | Albuns   |
-#      | rel_person_editor_faixas   | Gravadora | Claro Música | Relatorios Multiplos  | Faixas   |
-##      | rel_person_editor_todo_catalogo | Gravadora | Claro Música | Relatorios Multiplos  | Todo o Catálogo |
+      | arquivo                    | opcao     | servico      | tipo de relatorio    | filtro |
+#      | rel_person_recorder_selos    | Gravadora | RBT          | Relatorios Unificados | Selos    |
+#      | rel_person_recorder_artistas | Gravadora | RBT          | Relatorios Unificados | Artistas |
+#      | rel_person_recorder_albuns   | Gravadora | Claro Música | Relatorios Multiplos  | Albuns   |
+      | rel_person_recorder_faixas | Gravadora | Claro Música | Relatorios Multiplos | Faixas |
+##      | rel_person_recorder_todo_catalogo | Gravadora | Claro Música | Relatorios Multiplos  | Todo o Catálogo |
