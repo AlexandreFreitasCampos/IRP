@@ -12,7 +12,7 @@ pipeline {
                 bat 'mvn test -Dcucumber.filter.name="Efetuar login com perfil Gravadora/Editora"'
             }
         }
-        stage('Gerar relatorios personalizados com filtos Faixas') {
+        stage('Gerar relatorios personalizados Editor and Rec com filtos Faixas') {
             steps {
                 bat 'mvn test -Dcucumber.filter.name="rel_person_rec_edit_faixas"'
             }
@@ -22,7 +22,7 @@ pipeline {
                 bat 'mvn test -Dcucumber.filter.name="Efetuar login com perfil Editora"'
             }
         }
-        stage('Gerar relatorios personalizados com filtos Faixas') {
+        stage('Gerar relatorios personalizados Editor com filtos Faixas') {
             steps {
                 bat 'mvn test -Dcucumber.filter.name="rel_person_editor_faixas"'
             }
@@ -32,7 +32,7 @@ pipeline {
                 bat 'mvn test -Dcucumber.filter.name="Efetuar login com perfil Gravadora"'
             }
         }
-        stage('Gerar relatorios personalizados com filtos Faixas') {
+        stage('Gerar relatorios personalizados Recorder com filtos Faixas') {
             steps {
                 bat 'mvn test -Dcucumber.filter.name="rel_person_recorder_faixas"'
             }
