@@ -81,7 +81,7 @@ public class DriverFactory {
     // Método para criar o driver
     protected static void createDriver() throws MalformedURLException {
         // Configurar o WebDriverManager para gerenciarAutomaticamente o ChromeDriver
-        WebDriverManager.chromedriver().clearDriverCache().setup();
+        WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless"); // Executar em modo headless
         // Inicializar o ChromeDriver
