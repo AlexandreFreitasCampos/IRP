@@ -24,7 +24,7 @@ public class WebDriverConfig {
         return driver;
     }
 
-    public static void closeDriver() {
+    public static void killDriver() {
         if (driver != null) {
             driver.quit();
             driver = null;

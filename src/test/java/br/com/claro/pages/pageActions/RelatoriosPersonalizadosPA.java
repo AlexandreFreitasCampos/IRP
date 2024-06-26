@@ -3,8 +3,8 @@ package br.com.claro.pages.pageActions;
 
 import br.com.claro.pages.pageObjects.RelatoriosPersonalizdosPO;
 import br.com.claro.utils.AcoesWeb;
-import br.com.claro.utils.CustomTestException;
-import br.com.claro.utils.DriverFactory;
+import br.com.claro.utils.DriverFactory2;
+import br.com.claro.utils.WebDriverConfig;
 import org.openqa.selenium.WebElement;
 
 import java.text.DecimalFormat;
@@ -16,7 +16,7 @@ import java.util.List;
 import static br.com.claro.utils.AcoesWeb.*;
 import static br.com.claro.utils.PDF.*;
 
-public class RelatoriosPersonalizadosPA extends DriverFactory {
+public class RelatoriosPersonalizadosPA extends WebDriverConfig {
     RelatoriosPersonalizdosPO relatoriosPersonalizados = new RelatoriosPersonalizdosPO();
 
     private static String contaSelecionada;

@@ -1,16 +1,10 @@
 package br.com.claro.runner;
 
-import br.com.claro.pages.pageActions.RelatoriosPersonalizadosPA;
-import br.com.claro.utils.DriverFactory;
-import br.com.claro.utils.Hooks;
-import br.com.claro.utils.ScenarioDetails;
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import io.cucumber.junit.CucumberOptions.SnippetType;
 import org.junit.AfterClass;
 import org.junit.runner.RunWith;
-
-import java.util.List;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(

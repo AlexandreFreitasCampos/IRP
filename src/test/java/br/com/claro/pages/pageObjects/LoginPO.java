@@ -1,11 +1,12 @@
 package br.com.claro.pages.pageObjects;
 
-import br.com.claro.utils.DriverFactory;
+import br.com.claro.utils.DriverFactory2;
+import br.com.claro.utils.WebDriverConfig;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPO extends DriverFactory {
+public class LoginPO extends WebDriverConfig {
 
     public LoginPO(){
         PageFactory.initElements(getDriver(),  this);

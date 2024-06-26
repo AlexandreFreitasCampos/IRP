@@ -24,7 +24,7 @@ public class TiraPrint {
 		nomeArquivo =  nomeArquivo.replace("-",  "");// remove tuodos os -
 		nomeArquivo =  nomeArquivo + ".png";
 		try {
-			File imagem =  ((TakesScreenshot) DriverFactory.getDriver()).getScreenshotAs(OutputType.FILE);
+			File imagem =  ((TakesScreenshot) DriverFactory2.getDriver()).getScreenshotAs(OutputType.FILE);
 			FileUtils.copyFile(imagem,  new File("C:\\Automacao\\Img\\" + nomeArquivo));
 		}catch (Exception e) {
 			PDF.escreveErroComponente(e.toString());
