@@ -5,11 +5,16 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 public class LoginPO extends DriverFactory {
 
     public LoginPO(){
         PageFactory.initElements(getDriver(),  this);
     }
+    @FindBy(xpath = "//*[text()='Aceitar']")
+    public List<WebElement> listBtnAceitar;
+
     @FindBy(xpath = "//*[text()='Aceitar']")
     public WebElement btnAceitar;
     @FindBy(xpath = "//input[@placeholder='Usuário']")

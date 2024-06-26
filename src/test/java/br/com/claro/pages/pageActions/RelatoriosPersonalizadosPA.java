@@ -286,7 +286,9 @@ public class RelatoriosPersonalizadosPA {
                     break;
                 case "Sair":
                     if (filtro.contains("faixas")) {
+                        Thread.sleep(3000);
                         relatoriosPersonalizados.btnSair.click();
+                        Thread.sleep(3000);
                         AcoesWeb.aguardaElementoPresente(login.inputSenha);
                     }
                     break;

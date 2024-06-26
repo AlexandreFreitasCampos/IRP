@@ -31,8 +31,10 @@ public class LoginPA{
     public void inserirUsuario(String string) {
         try {
             AcoesWeb.highlightElement(acaoLogin.inputUsuario);
-            AcoesWeb.aguardaElementoPresente(acaoLogin.btnAceitar);
-            acaoLogin.btnAceitar.click();
+            //AcoesWeb.aguardaElementoPresente(acaoLogin.btnAceitar);
+            if(acaoLogin.listBtnAceitar.size() > 0) {
+                acaoLogin.btnAceitar.click();
+            }
             escreveStep("Inserir usuário e senha e clicar em 'Acessar'");
             acaoLogin.inputUsuario.click();
             acaoLogin.inputUsuario.clear();
