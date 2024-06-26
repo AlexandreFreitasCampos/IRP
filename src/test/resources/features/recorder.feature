@@ -48,6 +48,7 @@ Funcionalidade: Gerar relatórios
     E clico no botao "Download"
     E clico no botao "Excluir"
     E clico no botao "Voltar"
+    E clico no botao "Sair"
     Entao salvo o PDF "Relatorios"
 
     Exemplos:
