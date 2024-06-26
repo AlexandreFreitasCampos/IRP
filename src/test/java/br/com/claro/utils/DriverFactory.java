@@ -32,7 +32,6 @@ public class DriverFactory {
             } catch (MalformedURLException e) {
                 System.out.println("Falha ao inicializar o driver" + e.getMessage());
             }
-            System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'DriverNull");
         }
 
         return driver;
@@ -103,7 +102,6 @@ public class DriverFactory {
             driver.quit();
             // Limpa o driver
             driver = null;
-            System.out.println("bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbDriverNull");
         }
     }
 

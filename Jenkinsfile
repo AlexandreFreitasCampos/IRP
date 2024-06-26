@@ -7,30 +7,21 @@ pipeline {
                 git 'https://github.com/AlexandreFreitasCampos/IRP.git'
             }
         }
-        stage('Efetuar login com perfil Editora') {
+        stage('Gerar relatórios personalizados todos os filtos com o perfil Editor') {
             steps {
-                bat 'mvn test -Dcucumber.filter.name="Efetuar login com perfil Editora"'
+                bat 'mvn test -Dfeature=src/test/resources/features/editor.feature'
             }
         }
-        stage('Gerar rel person rec edit selos') {
+        stage('Gerar relatórios personalizados todos os filtos com o perfil Editor and Recorder') {
             steps {
-                bat 'mvn test -Dcucumber.filter.name="rel_person_editor_selos"'
+                bat 'mvn test -Dfeature=src/test/resources/features/editorAndRecorder.feature'
             }
         }
-        stage('Gerar rel person rec edit artistas') {
+        stage('Gerar relatórios personalizados todos os filtos com o perfil Recorder') {
             steps {
-                bat 'mvn test -Dcucumber.filter.name="rel_person_editor_artistas"'
+                bat 'mvn test -Dfeature=src/test/resources/features/recorder.feature'
             }
         }
-        stage('Gerar rel person rec edit albuns') {
-            steps {
-                bat 'mvn test -Dcucumber.filter.name="rel_person_editor_albuns"'
-            }
-        }
-        stage('Gerar rel person rec edit faixas') {
-            steps {
-                bat 'mvn test -Dcucumber.filter.name="rel_person_editor_faixas"'
-            }
-        }
+       
     }
 }
