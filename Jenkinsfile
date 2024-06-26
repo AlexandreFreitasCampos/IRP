@@ -9,27 +9,32 @@ pipeline {
         }
         stage('Efetuar login com perfil Recorder and Editor') {
             steps {
-                bat 'mvn test -Dfeature=src/test/resources/features/editor.feature'
+                bat 'mvn test -Dcucumber.filter.name="Efetuar login com perfil Gravadora/Editora"'
             }
         }
-        stage('Gerar relatorios personalizados com filtos Selos') {
+        stage('Gerar relatorios personalizados com filtos Faixas') {
             steps {
-                bat 'mvn test -Dcucumber.filter.name="rel_person_editor_selos"'
+                bat 'mvn test -Dcucumber.filter.name="rel_person_rec_edit_faixas"'
             }
         }
-        stage('Gerar relatorios personalizados com filtos Artistas') {
+        stage('Efetuar login com perfil Editor') {
             steps {
-                bat 'mvn test -Dcucumber.filter.name="rel_person_editor_artistas"'
-            }
-        }
-        stage('Gerar relatorios personalizados com filtos Álbuns') {
-            steps {
-                bat 'mvn test -Dcucumber.filter.name="rel_person_editor_albuns"'
+                bat 'mvn test -Dcucumber.filter.name="Efetuar login com perfil Editora"'
             }
         }
         stage('Gerar relatorios personalizados com filtos Faixas') {
             steps {
                 bat 'mvn test -Dcucumber.filter.name="rel_person_editor_faixas"'
+            }
+        }
+        stage('Efetuar login com perfil Editor') {
+            steps {
+                bat 'mvn test -Dcucumber.filter.name="Efetuar login com perfil  Recorder"'
+            }
+        }
+        stage('Gerar relatorios personalizados com filtos Faixas') {
+            steps {
+                bat 'mvn test -Dcucumber.filter.name="rel_person_recorder_faixas"'
             }
         }
        
