@@ -1,5 +1,6 @@
 package br.com.claro.runner;
 
+import br.com.claro.utils.DriverFactory;
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import io.cucumber.junit.CucumberOptions.SnippetType;
@@ -9,7 +10,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 		features =  {
-				"src/test/resources/features"
+				"src/test/resources/features/irp.feature"
 				     }
 		, glue =  {"br.com.claro.steps", "br.com.claro.utils"}
 		, tags =  ""
@@ -22,6 +23,6 @@ import org.junit.runner.RunWith;
 public class Runner {
 	@AfterClass
 	public static void fecharBrowser() {
-		//DriverFactory.killDriver();
+		DriverFactory.killDriver();
 	}
 }
