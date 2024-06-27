@@ -291,8 +291,10 @@ public class RelatoriosPersonalizadosPA {
                     }
                     break;
                 case "Voltar":
-                    AcoesWeb.clicarBotaoVoltarNavegador();
-                    AcoesWeb.aguardaElementoPresente(relatoriosPersonalizados.contaMKMusic);
+                    if(!filtro.contains("faixas")) {
+                        AcoesWeb.clicarBotaoVoltarNavegador();
+                        Thread.sleep(2000);
+                    }
                     break;
                 case "Sair":
                     if (filtro.contains("faixas")) {
