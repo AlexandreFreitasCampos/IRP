@@ -21,7 +21,7 @@ Funcionalidade: Gerar relatórios
 
   Esquema do Cenario: Gerar "<arquivo>"
     Dado que criei o arquvio PDF "<arquivo>" "<servico>" "MK Music (Editora)"
-    Quando seleciono a conta "MK Music (Editora)"
+    Quando seleciono a conta "Warner (Gravadora)"
     E clico no menu "Relatórios"
     E clico no menu "Relatórios Personalizados"
     Entao valido a URL "https://irp-hmg.imusica.com.br/Editors/CustomReports/CustomReports"
