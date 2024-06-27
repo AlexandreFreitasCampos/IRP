@@ -49,8 +49,8 @@ Funcionalidade: Gerar relatórios
     Quando valido os dados do relatorio de pedido
     E clico no botao "Download"
     E clico no botao "Excluir"
-    E clico no botao "Sair"
-    Entao salvo o PDF "Relatorios"
+    E salvo o PDF "Relatorios"
+    Entao clico no botao "Sair"
 
     Exemplos:
       | arquivo                      | opcao     | servico      | tipo de relatorio     | filtro   |

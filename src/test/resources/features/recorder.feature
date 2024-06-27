@@ -21,7 +21,7 @@ Funcionalidade: Gerar relatórios
 
   Esquema do Cenario: Gerar "<arquivo>"
     Dado que criei o arquvio PDF "<arquivo>" "<servico>" "MK Music (Editora)"
-    Quando seleciono a conta "Warner (Gravadora)"
+    Quando seleciono a conta "Warner (Gravadora) Rec"
     E clico no menu "Relatórios"
     E clico no menu "Relatórios Personalizados"
     Entao valido a URL "https://irp-hmg.imusica.com.br/Recorders/CustomReports/CustomReports"
@@ -48,8 +48,8 @@ Funcionalidade: Gerar relatórios
     E clico no botao "Download"
     E clico no botao "Excluir"
     E clico no botao "Voltar"
-    E clico no botao "Sair"
-    Entao salvo o PDF "Relatorios"
+    E salvo o PDF "Relatorios"
+    Entao clico no botao "Sair"
 
     Exemplos:
       | arquivo                    | opcao     | servico      | tipo de relatorio     | filtro   |

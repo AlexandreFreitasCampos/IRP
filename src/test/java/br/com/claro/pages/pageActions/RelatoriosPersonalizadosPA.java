@@ -4,7 +4,6 @@ package br.com.claro.pages.pageActions;
 import br.com.claro.pages.pageObjects.LoginPO;
 import br.com.claro.pages.pageObjects.RelatoriosPersonalizdosPO;
 import br.com.claro.utils.AcoesWeb;
-import br.com.claro.utils.DriverFactory;
 import org.openqa.selenium.WebElement;
 
 import java.text.DecimalFormat;
@@ -95,18 +94,29 @@ public class RelatoriosPersonalizadosPA {
     public void selecionarConta(String string) {
         try {
             Thread.sleep(3000);
-            if (string.equals("Warner (Gravadora)")) {
-                escreveStep("Selecionar a conta '" + string + "' e clicar no botão Seguinte");
-                contaSelecionada = relatoriosPersonalizados.contaWarner.getText();
-                relatoriosPersonalizados.contaWarner.click();
-                highlightElement(relatoriosPersonalizados.selectContas);
-            } else {
-                escreveStep("Validar a conta MK Music (Editora)");
-                contaSelecionada = relatoriosPersonalizados.contaMKMusic.getText();
-                validarTextos(string, relatoriosPersonalizados.contaMKMusic.getText());
-                highlightElement(relatoriosPersonalizados.contaMKMusic);
-                inserePrint();
+            switch (string) {
+                case "Warner (Gravadora)":
+                    escreveStep("Selecionar a conta '" + string + "' e clicar no botão Seguinte");
+                    contaSelecionada = relatoriosPersonalizados.contaWarner.getText();
+                    relatoriosPersonalizados.contaWarner.click();
+                    highlightElement(relatoriosPersonalizados.selectContas);
+                    break;
+                case "Warner (Gravadora) Rec":
+                    escreveStep("Validar a conta " + string);
+                    contaSelecionada = relatoriosPersonalizados.contaWarner.getText();
+                    validarTextos(string, relatoriosPersonalizados.contaWarner.getText());
+                    highlightElement(relatoriosPersonalizados.contaWarner);
+                    inserePrint();
+                    break;
+                default:
+                    escreveStep("Validar a conta " + string);
+                    contaSelecionada = relatoriosPersonalizados.contaMKMusic.getText();
+                    validarTextos(string, relatoriosPersonalizados.contaMKMusic.getText());
+                    highlightElement(relatoriosPersonalizados.contaMKMusic);
+                    inserePrint();
+                    break;
             }
+
         } catch (Exception e) {
             escreveErroComponente(e.getMessage());
             AcoesWeb.verificaErrosNaExecucao(e);
@@ -288,7 +298,7 @@ public class RelatoriosPersonalizadosPA {
                     if (filtro.contains("faixas")) {
                         Thread.sleep(3000);
                         relatoriosPersonalizados.btnSair.click();
-                        Thread.sleep(3000);
+                        Thread.sleep(1000);
                         AcoesWeb.aguardaElementoPresente(login.inputSenha);
                     }
                     break;
