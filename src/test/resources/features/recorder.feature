@@ -11,7 +11,7 @@ Funcionalidade: Gerar relatórios
   Cenario: Efetuar login com perfil Gravadora
     Dado que criei o arquvio PDF "realizarloginIRP_recorder" "" ""
     Quando valido a URL "https://irp-hmg.imusica.com.br/Account/Login"
-    E insiro o usuario "alexandre.campos.editor"
+    E insiro o usuario "alexandre.campos.recorder"
     E insiro a senha "@Gg190504"
     E clico no botao "Acessar"
     Entao valido a URL "https://irp-hmg.imusica.com.br/Account/LoginWith2fa?RememberMe=False"
@@ -24,7 +24,7 @@ Funcionalidade: Gerar relatórios
     Quando seleciono a conta "Warner (Gravadora)"
     E clico no menu "Relatórios"
     E clico no menu "Relatórios Personalizados"
-    Entao valido a URL "https://irp-hmg.imusica.com.br/Editors/CustomReports/CustomReports"
+    Entao valido a URL "https://irp-hmg.imusica.com.br/Recorders/CustomReports/CustomReports"
     Quando seleciono o servico "<servico>"
     E clico no botao "Seguinte Servico"
     E seleciono o Pais "BRASIL"
