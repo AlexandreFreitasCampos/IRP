@@ -13,7 +13,6 @@ pipeline {
                 }
             }
         }
-    stages {
         stage('Checar URL') {
             steps {
                 def driver = env.WEBDRIVER
@@ -44,5 +43,5 @@ pipeline {
                 bat 'mvn test -Dcucumber.filter.tags="@faixasRec"'
             }
         }
-    }    
-}
+   
+    }
