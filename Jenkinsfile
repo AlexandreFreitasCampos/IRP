@@ -1,6 +1,9 @@
 pipeline {
     agent any
-
+    options {
+        disableConcurrentBuilds() // Garante que apenas um estágio é executado por vez
+    }
+    
     stages {
         stage('Checar URL') {
             steps {
