@@ -56,9 +56,9 @@ Funcionalidade: Gerar relatórios
 
     Exemplos:
       | arquivo                      | opcao     | servico      | tipo de relatorio     | filtro   |
-#      | rel_person_rec_edit_selos    | Gravadora | RBT          | Relatorios Unificados | Selos    |
-#      | rel_person_rec_edit_artistas | Gravadora | RBT          | Relatorios Unificados | Artistas |
-#      | rel_person_rec_edit_albuns   | Gravadora | Claro Música | Relatorios Multiplos  | Albuns   |
+      | rel_person_rec_edit_selos    | Gravadora | RBT          | Relatorios Unificados | Selos    |
+      | rel_person_rec_edit_artistas | Gravadora | RBT          | Relatorios Unificados | Artistas |
+      | rel_person_rec_edit_albuns   | Gravadora | Claro Música | Relatorios Multiplos  | Albuns   |
       | rel_person_rec_edit_faixas   | Gravadora | Claro Música | Relatorios Multiplos  | Faixas   |
 #      | rel_person_grav_edit_todo_catalogo | Gravadora | Claro Música | Relatorios Unificados | Todo o Catálogo |
 
@@ -109,9 +109,9 @@ Funcionalidade: Gerar relatórios
 
     Exemplos:
       | arquivo                  | opcao     | servico      | tipo de relatorio    | filtro |
-#      | rel_person_recorder_selos    | Gravadora | RBT          | Relatorios Unificados | Selos    |
-#      | rel_person_recorder_artistas | Gravadora | RBT          | Relatorios Unificados | Artistas |
-#      | rel_person_recorder_albuns   | Gravadora | Claro Música | Relatorios Multiplos  | Albuns   |
+      | rel_person_recorder_selos    | Gravadora | RBT          | Relatorios Unificados | Selos    |
+      | rel_person_recorder_artistas | Gravadora | RBT          | Relatorios Unificados | Artistas |
+      | rel_person_recorder_albuns   | Gravadora | Claro Música | Relatorios Multiplos  | Albuns   |
       | rel_person_recorder_faixas | Gravadora | Claro Música | Relatorios Multiplos | Faixas |
 ##      | rel_person_recorder_todo_catalogo | Gravadora | Claro Música | Relatorios Multiplos  | Todo o Catálogo |
 
@@ -160,8 +160,8 @@ Funcionalidade: Gerar relatórios
 
     Exemplos:
       | arquivo                    | opcao     | servico      | tipo de relatorio     | filtro   |
-#      | rel_person_editor_selos    | Gravadora | RBT          | Relatorios Unificados | Selos    |
-#      | rel_person_editor_artistas | Gravadora | RBT          | Relatorios Unificados | Artistas |
-#      | rel_person_editor_albuns   | Gravadora | Claro Música | Relatorios Multiplos  | Albuns   |
+      | rel_person_editor_selos    | Gravadora | RBT          | Relatorios Unificados | Selos    |
+      | rel_person_editor_artistas | Gravadora | RBT          | Relatorios Unificados | Artistas |
+      | rel_person_editor_albuns   | Gravadora | Claro Música | Relatorios Multiplos  | Albuns   |
       | rel_person_editor_faixas   | Gravadora | Claro Música | Relatorios Multiplos  | Faixas   |
 ##      | rel_person_editor_todo_catalogo | Gravadora | Claro Música | Relatorios Multiplos  | Todo o Catálogo |
