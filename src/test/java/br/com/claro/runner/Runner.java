@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 		features =  {
-				"src/test/resources/features"
+				"src/test/resources/features/irp.feature"
 				     }
 		, glue =  {"br.com.claro.steps", "br.com.claro.utils"}
 		, tags =  ""

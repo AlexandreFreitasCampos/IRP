@@ -10,24 +10,28 @@ pipeline {
                 git 'https://github.com/AlexandreFreitasCampos/IRP.git'
             }
         }
-        stage('Realizar login com o perfil Editor and Recorder') {
+        
+        stage('Gerar relatorios personalizados todos os filtros com o perfil Editor') {
             steps {
-                bat 'mvn test -Dcucumber.filter.tags="@recEditor"'
+                bat 'mvn test -Dcucumber.options="src/test/resources/features/editor.feature"'
             }
         }
+        stage('outro estagio') {
+            steps {
+                echo 'outro estagio'
+            }
+        }
+
+
         stage('Gerar relatorios personalizados todos os filtros com o perfil Editor and Recorder') {
             steps {
-                bat 'mvn test -Dcucumber.filter.tags="@faixas"'
+                bat 'mvn test -Dcucumber.options="src/test/resources/features/editorAndRecorder.feature"'
             }
         }
-        stage('Realizar login com o perfil Recorder') {
-            steps {
-                bat 'mvn test -Dcucumber.filter.tags="@recEditor"'
-            }
-        }
+
         stage('Gerar relatorios personalizados todos os filtros com o perfil Recorder') {
             steps {
-                bat 'mvn test -Dcucumber.filter.tags="@faixasRec"'
+                bat 'mvn test -Dcucumber.options="src/test/resources/features/recorder.feature"'
             }
         }
     }    
