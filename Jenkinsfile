@@ -16,7 +16,7 @@ pipeline {
                 bat 'mvn test -Dcucumber.options="src/test/resources/features/editor.feature"'
             }
         }
-        stage('Gerar relatorios personalizados todos os filtros com o perfil Editor') {
+        stage('outro estagio') {
             steps {
                 echo 'outro estagio'
             }
