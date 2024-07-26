@@ -101,13 +101,13 @@ public class RelatoriosPersonalizadosPA {
                     relatoriosPersonalizados.contaWarner.click();
                     highlightElement(relatoriosPersonalizados.selectContas);
                     break;
-                case "Warner (Gravadora) Rec":
-                    escreveStep("Validar a conta " + string);
-                    contaSelecionada = relatoriosPersonalizados.contaWarner.getText();
-                    validarTextos(string, relatoriosPersonalizados.contaWarner.getText());
-                    highlightElement(relatoriosPersonalizados.contaWarner);
-                    inserePrint();
-                    break;
+//                case "Warner (Gravadora) Rec":
+//                    escreveStep("Validar a conta " + string);
+//                    contaSelecionada = relatoriosPersonalizados.contaWarner.getText();
+//                    validarTextos(string, relatoriosPersonalizados.contaWarner.getText());
+//                    highlightElement(relatoriosPersonalizados.contaWarner);
+//                    inserePrint();
+//                    break;
                 default:
                     escreveStep("Validar a conta " + string);
                     contaSelecionada = relatoriosPersonalizados.contaMKMusic.getText();

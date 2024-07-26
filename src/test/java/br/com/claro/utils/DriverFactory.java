@@ -82,7 +82,11 @@ public class DriverFactory {
         // Configurar o WebDriverManager para gerenciarAutomaticamente o ChromeDriver
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless"); // Executar em modo headless
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--headless");  // Opcional: Modo headless para execução sem interface gráfica
+        options.addArguments("--remote-debugging-port=9222"); // Porta de depuração remota
+        options.addArguments("--disable-gpu"); // Desabilitar GPU
         // Inicializar o ChromeDriver
         driver = new ChromeDriver();
         //driver =  new FirefoxDriver();

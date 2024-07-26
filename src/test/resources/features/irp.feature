@@ -77,7 +77,7 @@ Funcionalidade: Gerar relatórios
     @faixasRec
   Esquema do Cenario: Gerar "<arquivo>"
     Dado que criei o arquvio PDF "<arquivo>" "<servico>" "MK Music (Editora)"
-    Quando seleciono a conta "Warner (Gravadora) Rec"
+    Quando seleciono a conta "Warner (Gravadora)"
     E clico no menu "Relatórios"
     E clico no menu "Relatórios Personalizados"
     Entao valido a URL "https://irp-hmg.imusica.com.br/Recorders/CustomReports/CustomReports"
@@ -108,11 +108,11 @@ Funcionalidade: Gerar relatórios
     Entao clico no botao "Sair"
 
     Exemplos:
-      | arquivo                  | opcao     | servico      | tipo de relatorio    | filtro |
+      | arquivo                      | opcao     | servico      | tipo de relatorio     | filtro   |
       | rel_person_recorder_selos    | Gravadora | RBT          | Relatorios Unificados | Selos    |
       | rel_person_recorder_artistas | Gravadora | RBT          | Relatorios Unificados | Artistas |
       | rel_person_recorder_albuns   | Gravadora | Claro Música | Relatorios Multiplos  | Albuns   |
-      | rel_person_recorder_faixas | Gravadora | Claro Música | Relatorios Multiplos | Faixas |
+      | rel_person_recorder_faixas   | Gravadora | Claro Música | Relatorios Multiplos  | Faixas   |
 ##      | rel_person_recorder_todo_catalogo | Gravadora | Claro Música | Relatorios Multiplos  | Todo o Catálogo |
 
   Cenario: Efetuar login com perfil Editora
